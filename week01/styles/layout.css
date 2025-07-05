@@ -48,11 +48,9 @@ footer {
 }
 
 /* Flexbox Navigation */
-nav ul {
+nav {
   display: flex;
   gap: 1rem;
-  list-style: none;
-  padding: 0;
   margin-bottom: 1rem;
 }
 
@@ -65,4 +63,3 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
-
