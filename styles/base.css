@@ -8,25 +8,17 @@
   box-sizing: border-box;
 }
 
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
-
 /* Base Styles */
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f2f2f2;
-  color: #222; /* Darker for better contrast */
+  color: #222;
   line-height: 1.6;
 }
 
 /* Header */
 header {
   background-color: #2c3e50;
-
-  color: white;
   color: #ffffff;
   padding: 2rem 1rem;
   text-align: center;
@@ -57,25 +49,12 @@ nav a {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-nav a:hover {
-  background-color: #1abc9c;
-  transform: scale(1.05);
-
-  color: #ffffff;
-  background-color: #1f2d3a; /* Darker for better contrast */
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-weight: 500;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
 nav a:hover,
 nav a:focus {
   background-color: #1abc9c;
-  color: #000; /* High contrast on hover */
+  color: #000;
   transform: scale(1.05);
   outline: none;
-
 }
 
 /* Main */
@@ -89,12 +68,6 @@ main {
 
 /* Cards using CSS Grid */
 .card {
-
-  background-color: white;
-  border-radius: 6px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
   background-color: #ffffff;
   border-radius: 6px;
   padding: 1rem;
@@ -121,12 +94,6 @@ main {
 /* Footer */
 footer {
   background-color: #2c3e50;
-
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-
   color: #ffffff;
   text-align: center;
   padding: 1rem;
@@ -145,5 +112,4 @@ footer {
     flex-direction: column;
     gap: 0.5rem;
   }
-
 }
