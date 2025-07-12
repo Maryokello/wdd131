@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #f4f4f9;
@@ -15,10 +19,25 @@ body {
   padding: 1rem;
 }
 
+/* Skip Link (for accessibility) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
 /* =====================
    HEADER & NAVIGATION
 ===================== */
-
 header {
   background-color: #284b63;
   color: white;
@@ -76,12 +95,88 @@ header {
 /* =====================
          MAIN
 ===================== */
-
 main {
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
   text-align: center;
-
 }
 
+main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid Container */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Temple Cards */
+figure {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+figcaption {
+  padding: 0.5rem 0;
+  font-weight: 700;
+}
+
+/* =====================
+         FOOTER
+===================== */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 2rem;
+}
+
+/* =====================
+     MEDIA QUERIES
+===================== */
+@media (min-width: 700px) {
+  #menu {
+    display: none;
+  }
+
+  .navigation {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  main h2 {
+    font-size: 2rem;
+  }
+
+  .site-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
