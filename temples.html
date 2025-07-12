@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temple Album</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/larger.css" />
+
+  <!-- JavaScript -->
+  <script src="scripts/temples.js" defer></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <span class="site-title">Temple Album</span>
+    <button id="menu" aria-label="Toggle Menu">☰</button>
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <h1>Temples of The Church</h1>
+    <div class="grid-container">
+
+      <figure>
+        <img src="images/Salt-Lake-City-Temple.jpeg" alt="Salt Lake Temple in Utah with snowy mountains" loading="lazy" width="400" height="250">
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Rome-Italy-Temple.jpeg" alt="Rome Italy Temple with classical architecture and reflecting pool" loading="lazy" width="400" height="250">
+        <figcaption>Rome Italy Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Nairobi-Kenya-Temple.jpeg" alt="Nairobi Kenya Temple surrounded by tropical trees" loading="lazy" width="400" height="250">
+        <figcaption>Nairobi Kenya Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Laie-Hawaii-Temple.jpeg" alt="Laie Hawaii Temple with palm trees and lush greenery" loading="lazy" width="400" height="250">
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Cardston-Alberta-Temple.jpeg" alt="Cardston Alberta Temple built with white stone and gardens around" loading="lazy" width="400" height="250">
+        <figcaption>Cardston Alberta Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Paris-France-Temple.jpeg" alt="Paris France Temple with manicured gardens and European architecture" loading="lazy" width="400" height="250">
+        <figcaption>Paris France Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Accra-Ghana-Temple.jpeg" alt="Accra Ghana Temple with bright white exterior and blue sky" loading="lazy" width="400" height="250">
+        <figcaption>Accra Ghana Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Bangkok-Thailand-Temple.jpeg" alt="Bangkok Thailand Temple with traditional design and gold accents" loading="lazy" width="400" height="250">
+        <figcaption>Bangkok Thailand Temple</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/Freiburg-Germany-Temple.jpeg" alt="Freiberg Germany Temple with modern structure and flower beds" loading="lazy" width="400" height="250">
+        <figcaption>Freiberg Germany Temple</figcaption>
+      </figure>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> 🌸 Mary Okello 🌸 Kenya</p>
+    <p>Last Modification: <span id="lastModified"></span></p>
+  </footer>
+
+  <!-- Year & Modified Script -->
+  <script>
+    document.getElementById("lastModified").textContent = document.lastModified;
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
