@@ -2,8 +2,18 @@ function updateFooterDates() {
   const yearSpan = document.getElementById("year");
   const modifiedSpan = document.getElementById("lastModified");
 
-  if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-  if (modifiedSpan) modifiedSpan.textContent = document.lastModified;
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
+
+  if (modifiedSpan) {
+    const modifiedDate = new Date(document.lastModified);
+    const formatted = modifiedDate.toLocaleString(undefined, {
+      dateStyle: 'medium',
+      timeStyle: 'short'
+    });
+    modifiedSpan.textContent = formatted;
+  }
 }
 
 function setupMobileMenuToggle() {
