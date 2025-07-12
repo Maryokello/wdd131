@@ -6,6 +6,13 @@
   <meta name="description" content="A responsive album of temples from around the world by Mary Okello. Explore photos, locations, and design." />
   <meta name="author" content="Mary Okello" />
   <title>Temple Album</title>
+  <!-- Preload Roboto font -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" onload="this.rel='stylesheet'">
+   <noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+   </noscript>
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles/base.css" />
@@ -34,50 +41,78 @@
     <h2>Temples of The Church</h2>
     <section class="grid-container" aria-label="Temple Gallery">
 
-      <figure>
-        <img src="images/Salt-lake-City- Temple .jpeg" alt="Salt Lake Temple in Utah with snowy mountains" loading="lazy" width="400" height="250" />
-        <figcaption>Salt Lake Temple</figcaption>
-      </figure>
+    <figure>
+  <picture>
+    <source srcset="images/Salt-Lake-City-Temple.webp" type="image/webp">
+    <img src="images/Salt-Lake-City-Temple.jpeg" alt="Salt Lake Temple in Utah with snowy mountains" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Salt Lake Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Rome-Italy-Temple.jpeg" alt="Rome Italy Temple with classical architecture and reflecting pool" loading="lazy" width="400" height="250" />
-        <figcaption>Rome Italy Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Rome-Italy-Temple.webp" type="image/webp">
+    <img src="images/Rome-Italy-Temple.jpeg" alt="Rome Italy Temple with classical architecture and reflecting pool" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Rome Italy Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Nairobi-Kenya-Temple.jpeg" alt="Nairobi Kenya Temple surrounded by tropical trees" loading="lazy" width="400" height="250" />
-        <figcaption>Nairobi Kenya Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Nairobi-Kenya-Temple.webp" type="image/webp">
+    <img src="images/Nairobi-Kenya-Temple.jpeg" alt="Nairobi Kenya Temple surrounded by tropical trees" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Nairobi Kenya Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Laie-Hawaii-Temple.jpeg" alt="Laie Hawaii Temple with palm trees and lush greenery" loading="lazy" width="400" height="250" />
-        <figcaption>Laie Hawaii Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Laie-Hawaii-Temple.webp" type="image/webp">
+    <img src="images/Laie-Hawaii-Temple.jpeg" alt="Laie Hawaii Temple with palm trees and lush greenery" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Laie Hawaii Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Cardston-Alberta-Temple.jpeg" alt="Cardston Alberta Temple built with white stone and gardens around" loading="lazy" width="400" height="250" />
-        <figcaption>Cardston Alberta Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Cardston-Alberta-Temple.webp" type="image/webp">
+    <img src="images/Cardston-Alberta-Temple.jpeg" alt="Cardston Alberta Temple built with white stone and gardens around" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Cardston Alberta Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Paris-France-Temple.jpeg" alt="Paris France Temple with manicured gardens and European architecture" loading="lazy" width="400" height="250" />
-        <figcaption>Paris France Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Paris-France-Temple.webp" type="image/webp">
+    <img src="images/Paris-France-Temple.jpeg" alt="Paris France Temple with manicured gardens and European architecture" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Paris France Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Accra-Ghana-Temple.jpeg" alt="Accra Ghana Temple with bright white exterior and blue sky" loading="lazy" width="400" height="250" />
-        <figcaption>Accra Ghana Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Accra-Ghana-Temple.webp" type="image/webp">
+    <img src="images/Accra-Ghana-Temple.jpeg" alt="Accra Ghana Temple with bright white exterior and blue sky" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Accra Ghana Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Bangkok-Thailand-Temple.jpeg" alt="Bangkok Thailand Temple with traditional design and gold accents" loading="lazy" width="400" height="250" />
-        <figcaption>Bangkok Thailand Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Bangkok-Thailand-Temple.webp" type="image/webp">
+    <img src="images/Bangkok-Thailand-Temple.jpeg" alt="Bangkok Thailand Temple with traditional design and gold accents" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Bangkok Thailand Temple</figcaption>
+</figure>
 
-      <figure>
-        <img src="images/Freiburg-Germany-Temple.jpeg" alt="Freiberg Germany Temple with modern structure and flower beds" loading="lazy" width="400" height="250" />
-        <figcaption>Freiberg Germany Temple</figcaption>
-      </figure>
+<figure>
+  <picture>
+    <source srcset="images/Freiburg-Germany-Temple.webp" type="image/webp">
+    <img src="images/Freiburg-Germany-Temple.jpeg" alt="Freiberg Germany Temple with modern structure and flower beds" loading="lazy" width="400" height="250">
+  </picture>
+  <figcaption>Freiberg Germany Temple</figcaption>
+</figure>
+
 
     </section>
   </main>
