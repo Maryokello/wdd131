@@ -14,6 +14,11 @@ const navMenu = document.querySelector('.navigation');
 
 // Add toggle functionality on click
 menuButton.addEventListener('click', () => {
-  navMenu.classList.toggle('open');
-  menuButton.textContent = navMenu.classList.contains('open') ? '✖' : '☰';
+  const isOpen = navMenu.classList.toggle('open');
+  
+  // Toggle menu symbol
+  menuButton.textContent = isOpen ? '✖' : '☰';
+
+  // Accessibility: update aria-expanded
+  menuButton.setAttribute('aria-expanded', isOpen);
 });

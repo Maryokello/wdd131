@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Reset & Base */
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -15,7 +15,10 @@ body {
   padding: 1rem;
 }
 
-/* Header */
+/* =====================
+   HEADER & NAVIGATION
+===================== */
+
 header {
   background-color: #284b63;
   color: white;
@@ -26,9 +29,10 @@ header {
 .site-title {
   font-size: 2rem;
   font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-/* Hamburger Menu (Mobile Only) */
+/* Hamburger Menu (Mobile) */
 #menu {
   font-size: 2rem;
   background: none;
@@ -36,7 +40,7 @@ header {
   color: #fff;
   display: block;
   cursor: pointer;
-  margin: 1rem auto 0;
+  margin: 0.5rem auto 0;
 }
 
 /* Navigation */
@@ -69,78 +73,15 @@ header {
   outline: none;
 }
 
-/* Main Content */
+/* =====================
+         MAIN
+===================== */
+
 main {
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1rem;
   text-align: center;
+
 }
 
-main h1 {
-  font-size: 1.75rem;
-  margin-bottom: 1.5rem;
-}
-
-/* Grid Container */
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-/* Temple Cards */
-figure {
-  background-color: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  text-align: center;
-  padding: 0.5rem;
-}
-
-figure img {
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-}
-
-figcaption {
-  padding: 0.5rem 0;
-  font-weight: 700;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 2rem;
-}
-
-/* Media Query for Larger Screens */
-@media (min-width: 700px) {
-  #menu {
-    display: none;
-  }
-
-  .navigation {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-
-  main h1 {
-    font-size: 2rem;
-  }
-
-  .site-title {
-    font-size: 2.2rem;
-  }
-}

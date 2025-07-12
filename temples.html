@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive album of temples from around the world by Mary Okello. Explore photos, locations, and design.">
+  <meta name="author" content="Mary Okello">
   <title>Temple Album</title>
 
   <!-- CSS -->
@@ -86,10 +88,21 @@
     <p>Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- Fallback JS if defer fails -->
+  <!-- Fallback for date rendering -->
   <script>
-    document.getElementById("lastModified").textContent = document.lastModified;
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const yearSpan = document.getElementById("year");
+    const modifiedSpan = document.getElementById("lastModified");
+    const menuButton = document.getElementById("menu");
+    const nav = document.querySelector(".navigation");
+
+    yearSpan.textContent = new Date().getFullYear();
+    modifiedSpan.textContent = document.lastModified;
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.textContent = isOpen ? "✖" : "☰";
+    });
   </script>
 
 </body>
