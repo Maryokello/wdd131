@@ -1,0 +1,31 @@
+/* Ensure all elements start with a clean slate */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Optional: Give the body a nice font and padding */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* Hero section styling */
+.hero {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* Responsive image */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Optional: Add some spacing for better visual layout */
+main {
+  padding: 1rem 0;
+}

@@ -1,0 +1,99 @@
+:root {
+  --primary-color: #0a74da;
+  --secondary-color: #f5f5f5;
+  --font-body: 'Verdana', sans-serif;
+  --max-width: 960px;
+  --padding: 1rem;
+  --border: 1px solid #ccc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  background-color: var(--secondary-color);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header,
+footer {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--padding);
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: var(--max-width);
+  padding: var(--padding);
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hero picture,
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.info,
+.weather {
+  border: var(--border);
+  background-color: white;
+  padding: var(--padding);
+  border-radius: 8px;
+}
+
+/* Show weather icon SVG only on mobile */
+.weather-icon-mobile {
+  display: block;
+}
+
+.weather-icon-large {
+  display: none;
+}
+
+/* Large screens - Grid layout */
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero {
+    grid-column: span 2;
+  }
+
+  .weather-icon-mobile {
+    display: none;
+  }
+
+  .weather-icon-large::after {
+    content: "⛅";
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+  }
+}
+
+/* Optional: Add hover effects */
+section:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
