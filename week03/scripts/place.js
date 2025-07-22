@@ -64,5 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
       if (tempEl) tempEl.textContent = "Error";
       if (windEl) windEl.textContent = "Error";
       if (chillEl) chillEl.textContent = "N/A";
+
+      document.getElementById('lastModified').textContent = document.lastModified;
+
     });
 });
