@@ -7,27 +7,27 @@
   <meta name="author" content="Mary Okello" />
   <title>Explore Nairobi - Weather, Culture, and Attractions</title>
 
-  <!-- ✅ Google Font via full link (no @import) -->
+  <!-- ✅ Google Font via <link> -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
-  <!-- ✅ Your custom CSS (in 'styles/' folder) -->
+  <!-- ✅ Custom CSS in styles/ -->
   <link rel="stylesheet" href="styles/place.css" />
 
   <!-- ✅ Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
 </head>
 
-<body class="font-body">
+<body>
   <header>
-    <img src="week03/images/nairobi-logo.webp" alt="Nairobi logo" />
+    <img src="images/nairobi-logo.webp" alt="Nairobi logo" />
     <h1>Nairobi, Kenya</h1>
   </header>
 
   <div class="hero">
     <picture>
-      <source srcset="week03/images/hero-large.webp" media="(min-width: 1000px)" />
-      <source srcset="week03/images/hero-medium.webp" media="(min-width: 500px)" />
-      <img src="week03/images/hero-small.webp" alt="Nairobi Kenya, Temple" width="500" height="250" />
+      <source srcset="images/hero-large.webp" media="(min-width: 1000px)" />
+      <source srcset="images/hero-medium.webp" media="(min-width: 500px)" />
+      <img src="images/hero-small.webp" alt="Nairobi Kenya, Temple" width="500" height="250" />
     </picture>
   </div>
 
@@ -42,7 +42,9 @@
     </section>
 
     <section class="weather-info">
-      <div class="weather-icon-large" aria-hidden="true"></div>
+      <div class="weather-icon-large" aria-hidden="true">
+        <!-- Optional large weather icon image here -->
+      </div>
       <h2>Current Weather in Nairobi</h2>
       <svg class="weather-icon-mobile" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
         <path fill="#0a74da" d="M6 14a4 4 0 1 1 7.9-1.1A5.5 5.5 0 1 1 17 20H6a3 3 0 0 1 0-6z"/>
@@ -57,7 +59,7 @@
     <p>&copy; <span id="year"></span> | Nairobi, Kenya | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- ✅ JavaScript (in 'scripts/' folder) -->
-  <script src="week03/scripts/place.js" defer></script>
+  <!-- ✅ JavaScript -->
+  <script src="scripts/place.js" defer></script>
 </body>
 </html>

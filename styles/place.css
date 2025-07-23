@@ -83,7 +83,6 @@ main {
   object-fit: contain;
 }
 
-/* Content sections */
 .nairobi-info,
 .weather-info {
   border: var(--border);
