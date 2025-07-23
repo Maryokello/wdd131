@@ -5,6 +5,8 @@
   --max-width: 960px;
   --padding: 1rem;
   --border: 1px solid #ccc;
+  --border-radius: 8px;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 *,
@@ -33,6 +35,27 @@ footer {
   text-align: center;
 }
 
+header img {
+  display: block;
+  margin: 0 auto 0.5rem;
+  max-width: 100px;
+}
+
+/* Responsive logo and title layout */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+  }
+
+  header img {
+    margin: 0;
+  }
+}
+
 main {
   display: grid;
   grid-template-columns: 1fr;
@@ -44,26 +67,29 @@ main {
 
 .hero {
   width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero picture,
 .hero img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
+  object-fit: contain; /* Ensures full image is visible */
 }
 
-.info,
-.weather {
+/* Content sections */
+.nairobi-info,
+.weather-info {
   border: var(--border);
   background-color: white;
   padding: var(--padding);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
-/* Show weather icon SVG only on mobile */
+/* Weather icons */
 .weather-icon-mobile {
   display: block;
 }
@@ -72,7 +98,15 @@ main {
   display: none;
 }
 
-/* Large screens - Grid layout */
+.weather-icon-large::after {
+  content: "⛅";
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Large screens layout */
 @media (min-width: 768px) {
   main {
     grid-template-columns: 1fr 1fr;
@@ -86,14 +120,12 @@ main {
     display: none;
   }
 
-  .weather-icon-large::after {
-    content: "⛅";
-    font-size: 1.5rem;
-    margin-left: 0.5rem;
+  .weather-icon-large {
+    display: inline-block;
   }
 }
 
-/* Optional: Add hover effects */
+/* Hover effect */
 section:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
 }

@@ -15,9 +15,11 @@
 </head>
 
 <body>
-  <header>
-    <h1>Nairobi, Kenya</h1>
-  </header>
+ <header>
+  <img src="week03/images/nairobi-logo.png" alt="Nairobi logo: giraffe, skyline, and sun" width="80" height="80" />
+  <h1>Nairobi, Kenya</h1>
+</header>
+
 
   <div class="hero">
     <picture>
@@ -37,8 +39,11 @@
     </section>
 
     <section class="weather-info">
+      <div class="weather-icon-large" aria-hidden="true"></div>
       <h2>Current Weather in Nairobi</h2>
-      <img src="week03/images/weather-icon.jpeg" alt="Weather Icon" width="64" height="64">
+      <svg class="weather-icon-mobile" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" aria-hidden="true">
+      <path fill="#0a74da" d="M6 14a4 4 0 1 1 7.9-1.1A5.5 5.5 0 1 1 17 20H6a3 3 0 0 1 0-6z"/>
+       </svg>
       <p><strong>Temperature:</strong> <span id="temperature">Loading...</span></p>
       <p><strong>Wind Speed:</strong> <span id="windSpeed">Loading...</span></p>
       <p><strong>Wind Chill:</strong> <span id="windChill">Loading...</span></p>
