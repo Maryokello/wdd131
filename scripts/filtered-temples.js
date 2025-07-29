@@ -1,14 +1,14 @@
-/// filtered-temples.js
+// filtered-temples.js
 
-// ✅ Reference to the container
+// Reference to the container
 const container = document.querySelector("#temples-container");
 
-// ✅ Load the data from the global variable (make sure it's defined in filtered-temples-data.js)
+// Load temples data from the global variable (set in filtered-temples-data.js)
 let temples = window.temples || [];
 
-// ✅ Function to display temples
+// Function to display temples
 function displayTemples(templesArray) {
-  container.innerHTML = ""; // clear previous content
+  container.innerHTML = ""; // Clear previous content
 
   templesArray.forEach((temple) => {
     const card = document.createElement("div");
@@ -26,7 +26,7 @@ function displayTemples(templesArray) {
   });
 }
 
-// ✅ Filtering functions
+// Filtering functions
 function filterOldTemples() {
   const old = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
   displayTemples(old);
@@ -47,18 +47,18 @@ function filterSmallTemples() {
   displayTemples(small);
 }
 
-// ✅ Event listeners
+// Event listeners for filter buttons
 document.querySelector("#home").addEventListener("click", () => displayTemples(temples));
 document.querySelector("#old").addEventListener("click", filterOldTemples);
 document.querySelector("#new").addEventListener("click", filterNewTemples);
 document.querySelector("#large").addEventListener("click", filterLargeTemples);
 document.querySelector("#small").addEventListener("click", filterSmallTemples);
 
-// ✅ Load initial
+// Initial load
 document.addEventListener("DOMContentLoaded", () => {
   displayTemples(temples);
 
-  // Footer year and last modified
+  // Update footer year and last modified
   document.querySelector("#year").textContent = new Date().getFullYear();
   document.querySelector("#lastModified").textContent = document.lastModified;
 });
