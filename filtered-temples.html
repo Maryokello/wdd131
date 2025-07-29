@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Discover a dynamic temple gallery sorted by age, size, and location using JavaScript filters.">
-  <meta name="author" content="Mary Okello">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover a dynamic temple gallery sorted by age, size, and location using JavaScript filters." />
+  <meta name="author" content="Mary Okello" />
+  <meta name="robots" content="index, follow" />
   <title>Filtered Temple Album | WDD 131</title>
-  <link rel="stylesheet" href="styles/filtered-temples.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/filtered-temples.css" />
 </head>
+
 
 <body>
   <header>
@@ -25,16 +31,22 @@
   </header>
 
   <main>
-    <div class="temples-container" id="temples-container"></div>
+    <section class="temples-container" id="temples-container" aria-label="Temples Gallery"></section>
   </main>
 
   <footer>
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- ✅ Correct Order: Load DATA first, then JS logic -->
+  <!-- JavaScript files (defer ensures DOM loads first) -->
   <script src="scripts/filtered-temples-data.js" defer></script>
-<script src="scripts/filtered-temples.js" defer></script>
+  <script src="scripts/filtered-temples.js" defer></script>
+  <script>
+    // Footer dynamic values
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("lastModified").textContent = document.lastModified;
+    });
+  </script>
 </body>
 </html>
-

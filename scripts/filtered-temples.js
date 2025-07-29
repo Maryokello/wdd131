@@ -1,14 +1,27 @@
-// filtered-temples.js
-
 // Reference to the container
 const container = document.querySelector("#temples-container");
 
-// Load temples data from the global variable (set in filtered-temples-data.js)
+// Load temples data from global variable (set in filtered-temples-data.js)
 let temples = window.temples || [];
 
-// Function to display temples
+/**
+ * Utility to safely parse year from dedicated date string
+ */
+function getYear(dedicatedDate) {
+  const year = new Date(dedicatedDate).getFullYear();
+  return isNaN(year) ? 0 : year;
+}
+
+/**
+ * Displays an array of temple objects in the DOM
+ */
 function displayTemples(templesArray) {
   container.innerHTML = ""; // Clear previous content
+
+  if (templesArray.length === 0) {
+    container.innerHTML = `<p class="no-results">No temples found for this filter.</p>`;
+    return;
+  }
 
   templesArray.forEach((temple) => {
     const card = document.createElement("div");
@@ -16,10 +29,10 @@ function displayTemples(templesArray) {
 
     card.innerHTML = `
       <h3>${temple.name}</h3>
-      <img src="${temple.image}" alt="${temple.name}">
+      <img src="${temple.image}" alt="Image of ${temple.name}" loading="lazy" width="300" height="200">
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-      <p><strong>Size:</strong> ${temple.area} sq ft</p>
+      <p><strong>Size:</strong> ${temple.area.toLocaleString()} sq ft</p>
     `;
 
     container.appendChild(card);
@@ -28,12 +41,12 @@ function displayTemples(templesArray) {
 
 // Filtering functions
 function filterOldTemples() {
-  const old = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+  const old = temples.filter(t => getYear(t.dedicated) < 1900);
   displayTemples(old);
 }
 
 function filterNewTemples() {
-  const newer = temples.filter(t => new Date(t.dedicated).getFullYear() >= 2000);
+  const newer = temples.filter(t => getYear(t.dedicated) >= 2000);
   displayTemples(newer);
 }
 
@@ -47,18 +60,30 @@ function filterSmallTemples() {
   displayTemples(small);
 }
 
-// Event listeners for filter buttons
-document.querySelector("#home").addEventListener("click", () => displayTemples(temples));
-document.querySelector("#old").addEventListener("click", filterOldTemples);
-document.querySelector("#new").addEventListener("click", filterNewTemples);
-document.querySelector("#large").addEventListener("click", filterLargeTemples);
-document.querySelector("#small").addEventListener("click", filterSmallTemples);
-
-// Initial load
+// Add event listeners once DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
+  // Display all temples initially
   displayTemples(temples);
 
-  // Update footer year and last modified
-  document.querySelector("#year").textContent = new Date().getFullYear();
-  document.querySelector("#lastModified").textContent = document.lastModified;
+  // Filter buttons
+  document.querySelector("#home")?.addEventListener("click", e => {
+    e.preventDefault();
+    displayTemples(temples);
+  });
+  document.querySelector("#old")?.addEventListener("click", e => {
+    e.preventDefault();
+    filterOldTemples();
+  });
+  document.querySelector("#new")?.addEventListener("click", e => {
+    e.preventDefault();
+    filterNewTemples();
+  });
+  document.querySelector("#large")?.addEventListener("click", e => {
+    e.preventDefault();
+    filterLargeTemples();
+  });
+  document.querySelector("#small")?.addEventListener("click", e => {
+    e.preventDefault();
+    filterSmallTemples();
+  });
 });
