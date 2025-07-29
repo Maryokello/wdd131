@@ -1,56 +1,64 @@
-// Get reference to container
-const container = document.getElementById("temples-container");
+/// filtered-temples.js
 
-// Sort/filter buttons
-const homeBtn = document.getElementById("home");
-const oldBtn = document.getElementById("old");
-const newBtn = document.getElementById("new");
-const largeBtn = document.getElementById("large");
-const smallBtn = document.getElementById("small");
+// ✅ Reference to the container
+const container = document.querySelector("#temples-container");
 
-// Render function
-function renderTemples(temples) {
-  container.innerHTML = ""; // Clear previous content
-  temples.forEach(temple => {
-    const card = document.createElement("section");
+// ✅ Load the data from the global variable (make sure it's defined in filtered-temples-data.js)
+let temples = window.temples || [];
+
+// ✅ Function to display temples
+function displayTemples(templesArray) {
+  container.innerHTML = ""; // clear previous content
+
+  templesArray.forEach((temple) => {
+    const card = document.createElement("div");
     card.classList.add("temple-card");
+
     card.innerHTML = `
-      <h2>${temple.templeName}</h2>
-      <img src="${temple.imageUrl}" alt="Image of ${temple.templeName}">
+      <h3>${temple.name}</h3>
+      <img src="${temple.image}" alt="${temple.name}">
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-      <p><strong>Area:</strong> ${temple.area} sq ft</p>
+      <p><strong>Size:</strong> ${temple.area} sq ft</p>
     `;
+
     container.appendChild(card);
   });
 }
 
-// Initial render
-renderTemples(temples);
+// ✅ Filtering functions
+function filterOldTemples() {
+  const old = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+  displayTemples(old);
+}
 
-// Filter logic
-homeBtn.addEventListener("click", () => renderTemples(temples));
+function filterNewTemples() {
+  const newer = temples.filter(t => new Date(t.dedicated).getFullYear() >= 2000);
+  displayTemples(newer);
+}
 
-oldBtn.addEventListener("click", () => {
-  const oldTemples = temples.filter(t => parseInt(t.dedicated.split(",")[1]) < 1900);
-  renderTemples(oldTemples);
+function filterLargeTemples() {
+  const large = temples.filter(t => t.area > 90000);
+  displayTemples(large);
+}
+
+function filterSmallTemples() {
+  const small = temples.filter(t => t.area < 10000);
+  displayTemples(small);
+}
+
+// ✅ Event listeners
+document.querySelector("#home").addEventListener("click", () => displayTemples(temples));
+document.querySelector("#old").addEventListener("click", filterOldTemples);
+document.querySelector("#new").addEventListener("click", filterNewTemples);
+document.querySelector("#large").addEventListener("click", filterLargeTemples);
+document.querySelector("#small").addEventListener("click", filterSmallTemples);
+
+// ✅ Load initial
+document.addEventListener("DOMContentLoaded", () => {
+  displayTemples(temples);
+
+  // Footer year and last modified
+  document.querySelector("#year").textContent = new Date().getFullYear();
+  document.querySelector("#lastModified").textContent = document.lastModified;
 });
-
-newBtn.addEventListener("click", () => {
-  const newTemples = temples.filter(t => parseInt(t.dedicated.split(",")[1]) >= 2000);
-  renderTemples(newTemples);
-});
-
-largeBtn.addEventListener("click", () => {
-  const largeTemples = temples.filter(t => t.area > 90000);
-  renderTemples(largeTemples);
-});
-
-smallBtn.addEventListener("click", () => {
-  const smallTemples = temples.filter(t => t.area < 10000);
-  renderTemples(smallTemples);
-});
-
-// Footer year and modified date
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("lastModified").textContent = document.lastModified;
