@@ -1,5 +1,4 @@
-// temples-data.js
-const temples = [
+window.temples = [
   {
     templeName: "Aba Nigeria",
     location: "Aba, Nigeria",
