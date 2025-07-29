@@ -1,51 +1,56 @@
-(() => {
-  const container = document.getElementById("temples-container");
+// Get reference to container
+const container = document.getElementById("temples-container");
 
-  function displayTemples(templesArray) {
-    container.innerHTML = "";
-    templesArray.forEach(temple => {
-      const card = document.createElement("div");
-      card.className = "temple-card";
-      card.innerHTML = `
-        <h2>${temple.templeName}</h2>
-        <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-        <p><strong>Location:</strong> ${temple.location}</p>
-        <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-        <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      `;
-      container.appendChild(card);
-    });
-  }
+// Sort/filter buttons
+const homeBtn = document.getElementById("home");
+const oldBtn = document.getElementById("old");
+const newBtn = document.getElementById("new");
+const largeBtn = document.getElementById("large");
+const smallBtn = document.getElementById("small");
 
-  // Make sure 'temples' is defined before this script runs
-  if (typeof temples !== "undefined" && Array.isArray(temples)) {
-    document.getElementById("home").addEventListener("click", () =>
-      displayTemples(temples)
-    );
+// Render function
+function renderTemples(temples) {
+  container.innerHTML = ""; // Clear previous content
+  temples.forEach(temple => {
+    const card = document.createElement("section");
+    card.classList.add("temple-card");
+    card.innerHTML = `
+      <h2>${temple.templeName}</h2>
+      <img src="${temple.imageUrl}" alt="Image of ${temple.templeName}">
+      <p><strong>Location:</strong> ${temple.location}</p>
+      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+      <p><strong>Area:</strong> ${temple.area} sq ft</p>
+    `;
+    container.appendChild(card);
+  });
+}
 
-    document.getElementById("old").addEventListener("click", () =>
-      displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() < 1900))
-    );
+// Initial render
+renderTemples(temples);
 
-    document.getElementById("new").addEventListener("click", () =>
-      displayTemples(temples.filter(t => new Date(t.dedicated).getFullYear() > 2000))
-    );
+// Filter logic
+homeBtn.addEventListener("click", () => renderTemples(temples));
 
-    document.getElementById("large").addEventListener("click", () =>
-      displayTemples(temples.filter(t => t.area > 90000))
-    );
+oldBtn.addEventListener("click", () => {
+  const oldTemples = temples.filter(t => parseInt(t.dedicated.split(",")[1]) < 1900);
+  renderTemples(oldTemples);
+});
 
-    document.getElementById("small").addEventListener("click", () =>
-      displayTemples(temples.filter(t => t.area < 10000))
-    );
+newBtn.addEventListener("click", () => {
+  const newTemples = temples.filter(t => parseInt(t.dedicated.split(",")[1]) >= 2000);
+  renderTemples(newTemples);
+});
 
-    // Display all by default
-    displayTemples(temples);
-  } else {
-    console.error("❌ 'temples' array is not defined or loaded yet.");
-  }
+largeBtn.addEventListener("click", () => {
+  const largeTemples = temples.filter(t => t.area > 90000);
+  renderTemples(largeTemples);
+});
 
-  // Footer year and last modified
-  document.getElementById("year").textContent = new Date().getFullYear();
-  document.getElementById("lastModified").textContent = document.lastModified;
-})();
+smallBtn.addEventListener("click", () => {
+  const smallTemples = temples.filter(t => t.area < 10000);
+  renderTemples(smallTemples);
+});
+
+// Footer year and modified date
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
