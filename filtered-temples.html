@@ -8,14 +8,11 @@
   <title>Filtered Temple Album | WDD 131</title>
   <link rel="stylesheet" href="styles/filtered-temples.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <script src="scripts/filtered-temples.js" defer></script>
 </head>
 
 <body>
   <header>
     <h1>Temples</h1>
-    
-    <!-- ✅ Replaced <button> with <a> for valid HTML links -->
     <nav>
       <ul>
         <li><a href="#" id="home">Home</a></li>
@@ -35,8 +32,9 @@
     <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
   </footer>
 
-  <!-- ✅ Added defer for non-blocking JS -->
+  <!-- ✅ Correct Order: Load DATA first, then JS logic -->
+  <script src="scripts/filtered-temples-data.js" defer></script>
   <script src="scripts/filtered-temples.js" defer></script>
-  <script src="scripts/filtered-temples-data.js"></script>
 </body>
 </html>
+
