@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lazy Loading Demo with Lightbox</title>
+  <link rel="stylesheet" href="styles/lazyload.css" />
+</head>
+<body>
+
+  <h1>Lazy Loading Gallery with Lightbox</h1>
+  
+ <div class="gallery">
+  <img src="https://placehold.co/400x300?text=Placeholder+1" alt="Placeholder 1" loading="lazy" />
+  <img src="https://placehold.co/400x300?text=Placeholder+2" alt="Placeholder 2" loading="lazy" />
+  <img src="https://placehold.co/400x300?text=Placeholder+3" alt="Placeholder 3" loading="lazy" />
+  <img src="https://placehold.co/400x300?text=Placeholder+4" alt="Placeholder 4" loading="lazy" />
+  <img src="https://placehold.co/400x300?text=Placeholder+5" alt="Placeholder 5" loading="lazy" />
+  <img src="https://placehold.co/400x300?text=Placeholder+6" alt="Placeholder 6" loading="lazy" />
+</div>
+
+
+  <footer>
+    © 2025 Lazy Load Demo<br />
+    Last modified: 07/29/2025 11:26:54
+  </footer>
+
+  <!-- Lightbox overlay -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Enlarged image">
+  </div>
+
+  <script src="script/lazyload.js"></script>
+</body>
+</html>
