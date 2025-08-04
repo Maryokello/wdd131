@@ -1,60 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit a product review using this form.">
+  <meta name="author" content="Mary Okello">
   <title>Product Review Form</title>
-  <link rel="stylesheet" href="styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-  <form method="get" action="review.html">
-    <h1>Product Review</h1>
+  
 
-    <!-- Product Name -->
-    <label for="product">Product Name:</label>
+  <form method="get" action="review.html">
+    <h1>Product Review Form</h1>
+    <label for="product">Product:</label>
     <select id="product" name="product" required>
-      <option disabled selected>Select a Product ...</option>
+      <option value="">Select a product</option>
+      <option value="widgetA">Widget A</option>
+      <option value="widgetB">Widget B</option>
+      <option value="widgetC">Widget C</option>
     </select>
 
-    <!-- Overall Rating -->
     <fieldset>
-      <legend>Overall Rating:</legend>
-      <label><input type="radio" name="rating" value="1" required /> 1 ★</label>
-      <label><input type="radio" name="rating" value="2" /> 2 ★★</label>
-      <label><input type="radio" name="rating" value="3" /> 3 ★★★</label>
-      <label><input type="radio" name="rating" value="4" /> 4 ★★★★</label>
-      <label><input type="radio" name="rating" value="5" /> 5 ★★★★★</label>
+      <legend>Rating:</legend>
+      <label><input type="radio" name="rating" value="1" required> 1</label>
+      <label><input type="radio" name="rating" value="2"> 2</label>
+      <label><input type="radio" name="rating" value="3"> 3</label>
+      <label><input type="radio" name="rating" value="4"> 4</label>
+      <label><input type="radio" name="rating" value="5"> 5</label>
     </fieldset>
 
-    <!-- Date Installed -->
-    <label for="install-date">Date of Installation:</label>
-    <input type="date" id="install-date" name="install-date" required />
+    <label for="review-date">Review Date:</label>
+    <input type="date" id="review-date" name="review-date" required>
 
-    <!-- Useful Features -->
     <fieldset>
-      <legend>Useful Features:</legend>
-      <label><input type="checkbox" id="feature1" name="features" value="Easy to Use" /> Easy to Use</label>
-      <label><input type="checkbox" id="feature2" name="features" value="Durable" /> Durable</label>
-      <label><input type="checkbox" id="feature3" name="features" value="Affordable" /> Affordable</label>
-      <label><input type="checkbox" id="feature4" name="features" value="Energy Efficient" /> Energy Efficient</label>
+      <legend>Features Used:</legend>
+      <label><input type="checkbox" name="features" value="durability"> Durability</label>
+      <label><input type="checkbox" name="features" value="design"> Design</label>
+      <label><input type="checkbox" name="features" value="performance"> Performance</label>
+      <label><input type="checkbox" name="features" value="value"> Value for Money</label>
     </fieldset>
 
-    <!-- Written Review -->
-    <label for="review">Written Review:</label>
-    <textarea id="review" name="review" rows="4" cols="30"></textarea>
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" name="comments" rows="4" cols="40"></textarea>
 
-    <!-- User Name -->
-    <label for="username">Your Name (optional):</label>
-    <input type="text" id="username" name="username" />
+    <label for="username">Your Name:</label>
+    <input type="text" id="username" name="username" required>
 
-    <!-- Submit -->
-    <input type="submit" value="Submit Review" />
+    <input type="submit" value="Submit">
   </form>
 
-  <footer>
-    <p>&copy; 2025 Mary Okello. All rights reserved.</p>
+  <script src="scripts/script.js" defer></script>
+      <footer>
+    <p>&copy; <span id="year"></span> Mary Okello. All rights reserved.</p>
+    <p>Last modified: <span id="lastModified"></span></p>
   </footer>
 
-  <script src="scripts/script.js"></script>
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Set last modified date
+    document.getElementById("lastModified").textContent = document.lastModified;
+  </script>
+
 </body>
 </html>
