@@ -45,13 +45,16 @@
   </form>
 
   <footer>
-    <p>&copy; 2025 Mary Okello</p>
+    <p>&copy; 2025 Mary Okello. All rights reserved.</p>
     <p id="lastModified"></p>
   </footer>
 
   <script>
-    // Set last modified date in footer
-    document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
+    document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("lastModified").textContent =
+        "Last Modified: " + document.lastModified;
+    });
   </script>
 </body>
 </html>
+
