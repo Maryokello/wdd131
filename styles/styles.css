@@ -4,7 +4,7 @@
   --text-color: #333;
   --bg-color: #f4f4f4;
   --card-bg: #fff;
-  --footer-color: #555;
+  --footer-color: #666;
 }
 
 body {
@@ -48,6 +48,11 @@ fieldset {
   padding: 0;
 }
 
+fieldset label {
+  margin-right: 1rem;
+  display: inline-block;
+}
+
 legend {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -74,12 +79,20 @@ input[type="submit"]:hover {
   background-color: var(--primary-hover);
 }
 
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 footer {
   text-align: center;
-  margin-top: 2rem;
-  padding: 1rem;
   font-size: 0.9rem;
   color: var(--footer-color);
+  padding: 1rem;
+  margin-top: 2rem;
+  border-top: 1px solid #ccc;
 }
 
 /* Responsive tweaks */
@@ -98,13 +111,4 @@ footer {
   input[type="submit"] {
     width: 100%;
   }
-}
-
-footer {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #666;
-  padding: 1rem;
-  margin-top: 2rem;
-  border-top: 1px solid #ccc;
 }

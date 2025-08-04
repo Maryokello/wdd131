@@ -15,9 +15,12 @@
   <h1>Product Review</h1>
   <form method="get" action="review.html">
     <label for="product">Product:</label>
-    <select id="product" name="product" required>
-    <option value="" disabled selected>Select a product</option>
-    </select>
+<select id="product" name="product" required>
+  <option value="" disabled selected>Select a product</option>
+  <!-- Fallback option in case JS doesn't load -->
+  <option value="Toaster 3000">Toaster 3000</option>
+</select>
+
 
 
     <fieldset>

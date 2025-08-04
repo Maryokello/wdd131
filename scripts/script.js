@@ -1,21 +1,28 @@
-// Product array
-const products = [
-  { id: 1, name: "Toaster 3000" },
-  { id: 2, name: "Blender X" },
-  { id: 3, name: "Coffee Maker Pro" },
-  { id: 4, name: "Air Fryer Max" }
-];
+document.addEventListener("DOMContentLoaded", function () {
+  const productSelect = document.getElementById("product");
+  const products = [
+    "Toaster 3000",
+    "Blender Pro",
+    "Air Fryer Max",
+    "Coffee Maker Deluxe"
+  ];
 
-// Populate select options
-window.addEventListener('DOMContentLoaded', () => {
-  const select = document.getElementById('product');
-  if (select) {
-    products.forEach(product => {
-      const option = document.createElement('option');
-      option.value = product.name;
-      option.textContent = product.name;
-      select.appendChild(option);
-    });
+  // Clear fallback options except the first placeholder
+  while (productSelect.options.length > 1) {
+    productSelect.remove(1);
   }
+
+  // Add dynamic options
+  products.forEach(product => {
+    const option = document.createElement("option");
+    option.value = product;
+    option.textContent = product;
+    productSelect.appendChild(option);
+  });
+
+  // Update last modified date
+  document.getElementById("lastModified").textContent =
+    "Last Modified: " + document.lastModified;
 });
+
 
