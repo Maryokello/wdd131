@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review Submitted</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Thank you for your review!</h1>
+    <p>This is review number: <span id="review-count"></span></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Mary Okello. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Increment counter in localStorage
+    const count = localStorage.getItem("reviewCount");
+    const newCount = count ? parseInt(count) + 1 : 1;
+    localStorage.setItem("reviewCount", newCount);
+    document.getElementById("review-count").textContent = newCount;
+  </script>
+</body>
+</html>
