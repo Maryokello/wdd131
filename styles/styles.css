@@ -1,23 +1,38 @@
+:root {
+  --primary-color: #007BFF;
+  --primary-hover: #0056b3;
+  --text-color: #333;
+  --bg-color: #f4f4f4;
+  --card-bg: #fff;
+  --footer-color: #555;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 1rem;
-  background-color: #f4f4f4;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 form {
   max-width: 600px;
   margin: auto;
-  background: white;
-  padding: 1rem;
+  background: var(--card-bg);
+  padding: 2rem;
   border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-label, input, select, textarea {
+label,
+input,
+select,
+textarea {
   display: block;
   width: 100%;
   margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 input[type="radio"],
@@ -30,16 +45,57 @@ input[type="checkbox"] {
 fieldset {
   border: none;
   margin-bottom: 1rem;
+  padding: 0;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--primary-hover);
 }
 
 footer {
   text-align: center;
   margin-top: 2rem;
-}
-
-footer {
-  text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
-  color: #555;
+  color: var(--footer-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  form {
+    padding: 1rem;
+  }
+
+  label,
+  input,
+  select,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+  }
 }
