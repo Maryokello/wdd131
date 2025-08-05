@@ -1,0 +1,63 @@
+/* Typography and Color Schema */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
+:root {
+  --primary: #2a9d8f;
+  --secondary: #264653;
+  --background: #f4f4f4;
+  --text: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+header {
+  background-color: var(--secondary);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2, h3 {
+  color: var(--primary);
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  background-color: var(--secondary);
+  color: white;
+  font-size: 0.9rem;
+}
