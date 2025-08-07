@@ -5,7 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Website planning document for WDD project." />
   <title>Site Plan – SmartHome Gadget Store</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles/siteplan.css" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/webp" href="images/favicon.webp" />
 </head>
 <body>
@@ -13,6 +20,16 @@
     <h1>SmartHome Gadget Store</h1>
     <p class="logo-desc">Your one-stop shop for smart living</p>
   </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
 
   <main>
     <section>
@@ -52,22 +69,22 @@
       </p>
     </section>
 
+    <!-- Wireframes Section -->
     <section>
-      <h2>Wireframe</h2>
-      <p>Below are the wireframes for mobile and desktop views of the homepage.</p>
+      <h2>Wireframes</h2>
+      <p>The following wireframes illustrate the general layout and structure for mobile and desktop views of the website.</p>
+
       <h3>Mobile View</h3>
-      <img src="images/Mobile-view.webp" alt="Mobile Wireframe" width="300" />
+      <img class="wireframe" src="images/Mobile-view.webp" alt="Mobile wireframe layout for SmartHome Gadget Store" loading="lazy">
       <h3>Desktop View</h3>
-      <img src="images/Desktop-view.webp" alt="Desktop Wireframe" width="400" />
+      <img class="wireframe" src="images/Desktop-view.webp" alt="Desktop wireframe layout for SmartHome Gadget Store" loading="lazy">
+
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 SmartHome Gadget Store | Last Modified: <span id="lastModified"></span></p>
+    <p>&copy; 2025 SmartHome Gadget Store | <a href="references.html">References</a></p>
   </footer>
-
-  <script>
-    document.getElementById('lastModified').textContent = document.lastModified;
-  </script>
 </body>
 </html>

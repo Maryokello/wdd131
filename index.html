@@ -1,80 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WDD 131 – Dynamic Web Fundamentals – Mary Okello</title>
-  <meta name="description" content="WDD 131 – Dynamic Web Fundamentals. Mary Okello. Course introduction, student profile, and project showcase.">
-  <meta name="author" content="Mary Okello">
-  <link rel="stylesheet" href="styles/base.css" type="text/css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SmartHome Gadget Store - Find the best smart devices for your home." />
+  <title>Home – SmartHome Gadget Store</title>
 
-  <!-- Preload and optimize Google Font -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"></noscript>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="styles/base.css" type="text/css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
 
-  <!-- JavaScript -->
-
-  <script src="scripts/getdates.js" defer></script>
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="week06 Project/images/favicon.webp" />
 </head>
 <body>
   <header>
-    <span id="course-title">WDD 131 – Dynamic Web Fundamentals</span>
-    <nav>
-
-      <a href="https://www.linkedin.com/in/mary-okello-data-analyst/">LinkedIn</a>
-      <a href="https://byupw.instructure.com/">Canvas</a>
-      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7">Scripture</a>
-      <a href="https://www.linkedin.com/in/mary-okello-data-analyst/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a href="https://byupw.instructure.com/" target="_blank" rel="noopener noreferrer">Canvas</a>
-      <a href="https://www.churchofjesuschrist.org/study/scriptures/bofm/1-ne/3?lang=eng&id=p7#p7" target="_blank" rel="noopener noreferrer">Scripture</a>
-      <a href="#">Final Project</a>
-    </nav>
+    <h1>SmartHome Gadget Store</h1>
+    <p class="logo-desc">Your one-stop shop for smart living</p>
   </header>
 
-  <main>
-    <h1>Mary Okello</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="references.html">References</a></li>
+    </ul>
+  </nav>
 
-    <section class="card">
-      <h2>About Me</h2>
-  
-      <img src="images/mary-profile.jpg" alt="Photo of Mary Okello" width="300" height="300">
-      <p>Hello! I'm Mary, a data analyst passionate about humanitarian work and technology. I'm currently taking WDD 131 to improve my web development skills.</p>
+  <main>
+    <section>
+      <h2>Welcome to SmartHome Gadget Store</h2>
+      <p>We provide top-rated reviews and recommendations for smart devices to make your life easier, safer, and more efficient.</p>
     </section>
 
-    <section class="card">
-      <h2>My Interests</h2>
-
-      <img src="images/data-visualization.jpeg" alt="A colorful data visualization dashboard" width="300" height="300">
-      <p>I love working with data to tell stories that make a difference. Outside work, I enjoy reading scriptures, exploring nature, and teaching others.</p>
+    <section>
+      <h2>Featured Gadgets</h2>
+      <div id="featured-products">
+        <!-- JavaScript will insert featured products here -->
+      </div>
     </section>
   </main>
 
-  <footer
-    <p>
-      &copy; <span id="currentyear"></span> Mary Okello, Kenya
-    </p>
-    <p id="lastModified"></p>
+  <footer>
+    <p>&copy; 2025 SmartHome Gadget Store | <a href="references.html">References</a></p>
   </footer>
 
-  <script>
-    // Populate the current year
-    document.getElementById("currentyear").textContent = new Date().getFullYear();
-
-    // Populate the last modified date
-    document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
-  </script>
+  <script src="scripts/main.js"></script>
 </body>
 </html>
-
-
-    <p>&copy; <span id="currentyear"></span> Mary Okello, Kenya</p>
-    <p id="lastModified"></p>
-  </footer>
-</body>
-</html>
-
