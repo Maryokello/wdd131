@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A responsive album of temples from around the world by Mary Okello." />
+  <meta name="author" content="Mary Okello" />
+  <title>Temple Album</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" onload="this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/temples.css">
+  <link rel="stylesheet" href="styles/temples-large.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header>
+    <h1 class="site-title">Temple Album</h1>
+    <button id="menu" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav class="navigation" id="nav" aria-label="Main Navigation">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
+    </nav>
+  </header>
+
+  <main id="main-content" role="main">
+    <h2>Temples of The Church</h2>
+    <section class="grid-container" aria-label="Temple Gallery">
+
+      <!-- Temple Cards -->
+      <figure>
+        <picture>
+          <source srcset="images/Salt-Lake-City-Temple.webp" type="image/webp" />
+          <img src="images/Salt-Lake-City-Temple.jpeg" alt="Salt Lake Temple in Utah" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Salt Lake Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Rome-Italy-Temple.webp" type="image/webp" />
+          <img src="images/Rome-Italy-Temple.jpeg" alt="Rome Italy Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Rome Italy Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Nairobi-Kenya-Temple.webp" type="image/webp" />
+          <img src="images/Nairobi-Kenya-Temple.jpeg" alt="Nairobi Kenya Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Nairobi Kenya Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Laie-Hawaii-Temple.webp" type="image/webp" />
+          <img src="images/Laie-Hawaii-Temple.jpeg" alt="Laie Hawaii Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Laie Hawaii Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Cardston-Alberta-Temple.webp" type="image/webp" />
+          <img src="images/Cardston-Alberta-Temple.jpeg" alt="Cardston Alberta Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Cardston Alberta Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Paris-France-Temple.webp" type="image/webp" />
+          <img src="images/Paris-France-Temple.jpeg" alt="Paris France Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Paris France Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Accra-Ghana-Temple.webp" type="image/webp" />
+          <img src="images/Accra-Ghana-Temple.jpeg" alt="Accra Ghana Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Accra Ghana Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Bangkok-Thailand-Temple.webp" type="image/webp" />
+          <img src="images/Bangkok-Thailand-Temple.jpeg" alt="Bangkok Thailand Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Bangkok Thailand Temple</figcaption>
+      </figure>
+
+      <figure>
+        <picture>
+          <source srcset="images/Freiburg-Germany-Temple.webp" type="image/webp" />
+          <img src="images/Freiburg-Germany-Temple.jpeg" alt="Freiberg Germany Temple" loading="lazy" width="400" height="250" />
+        </picture>
+        <figcaption>Freiberg Germany Temple</figcaption>
+      </figure>
+
+    </section>
+  </main>
+
+  <footer aria-label="Site Footer">
+    <p>© <span id="year"></span> 🌸 Mary Okello 🌸 Kenya</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <script src="scripts/temples.js" defer></script>
+
+
+</body>
+</html>
