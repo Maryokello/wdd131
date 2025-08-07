@@ -1,0 +1,123 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
+:root {
+  --primary: #2a9d8f;
+  --secondary: #264653;
+  --background: #f4f4f4;
+  --text: #333;
+  --light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* HEADER */
+header {
+  background-color: var(--secondary);
+  color: var(--light);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+
+.logo-desc {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* IMAGE STYLING */
+.wireframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  background-color: var(--secondary);
+  color: var(--light);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Reduce image sizes and make them responsive */
+/* siteplan.css */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  width: 300px; /* Adjust as needed (e.g., 250px, 200px) */
+}
+
+.wireframe {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
