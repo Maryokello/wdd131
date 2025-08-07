@@ -1,0 +1,202 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap');
+
+:root {
+  --primary: #2a9d8f;
+  --secondary: #264653;
+  --background: #f4f4f4;
+  --text: #333;
+  --light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background-color: var(--secondary);
+  color: var(--light);
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+}
+
+header .logo-desc {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+/* NAVIGATION */
+nav {
+  background: var(--primary);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+nav ul li {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+nav ul li:first-child {
+  border-top: none;
+}
+
+nav ul li a {
+  display: block;
+  color: var(--light);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--secondary);
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* PRODUCT CARDS */
+.product-card {
+  background: var(--light);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.product-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.25rem;
+}
+
+.product-card button {
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.product-card button:hover {
+  background: var(--secondary);
+}
+
+/* CONTACT FORM */
+form {
+  background: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+form label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  margin-top: 1rem;
+  background: var(--primary);
+  color: var(--light);
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: var(--secondary);
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--secondary);
+  color: var(--light);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer a {
+  color: var(--primary);
+}
+
+/* RESPONSIVE LAYOUT */
+@media (min-width: 600px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  nav ul li {
+    border: none;
+  }
+
+  nav ul li a {
+    padding: 1rem 1.5rem;
+  }
+
+  /* Product grid for larger screens */
+  #featured-products,
+  #product-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #featured-products,
+  #product-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
